@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
+// COMPONENETS
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
@@ -31,7 +33,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule
 
   ],
   providers: [],

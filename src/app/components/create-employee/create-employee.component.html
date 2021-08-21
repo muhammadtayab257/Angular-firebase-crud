@@ -2,39 +2,42 @@
   <div class="row justify-content-center ">
     <div class="col-md-8 bg-light ">
       <h2 class=" text-center text-dark mt-5">Add New Product</h2>
-      <form>
+      <form [formGroup]="createemployee" (ngSubmit)="getData()">
+        <div class="errors text-center">
+          <span *ngIf="submitted && createemployee.invalid" class="badge bg-danger">Some Thing Went Wrong</span>
+        </div>
         <div class="row g-2 p-2 ">
-          <div class="col-md mb-2">
+          <div class="col-md">
             <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Product Name</mat-label>
-              <input type="text" matInput ngModel placeholder="Name"name="product_name">
+              <mat-label> Name</mat-label>
+              <input type="text" matInput placeholder="Name" formControlName="name">
             </mat-form-field>
           </div>
-          <div class="col-md mb-2">
+          <div class="col-md">
             <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Product Category</mat-label>
-              <input type="number" matInput ngModel name="product_category">
+              <mat-label>Last Name</mat-label>
+              <input type="text" matInput formControlName="lastname">
             </mat-form-field>
           </div>
         </div>
         <div class="row g-2 p-2 ">
-          <div class="col-md mb-2">
+          <div class="col-md">
             <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Product Name</mat-label>
-              <input type="text" matInput ngModel name="product_name">
+              <mat-label>Document</mat-label>
+              <input type="text" matInput formControlName="document">
             </mat-form-field>
           </div>
           <div class="col-md ">
             <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Product Category</mat-label>
-              <input type="number" matInput ngModel name="product_category">
+              <mat-label>Salary</mat-label>
+              <input type="text" matInput formControlName="salary">
             </mat-form-field>
           </div>
         </div>
 
         <div class="form-group pb-3 text-center">
-          <button mat-raised-button color="primary" class="mx-4">Return Back</button>
-          <button mat-raised-button color="primary">Add User</button>
+          <button type="text" mat-raised-button color="primary" class="mx-4">Return Back</button>
+          <button type="submit" mat-raised-button color="primary">Add User</button>
         </div>
       </form>
     </div>
