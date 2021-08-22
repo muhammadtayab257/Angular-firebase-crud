@@ -22,7 +22,7 @@
           <td>{{ employee.document}}</td>
           <td>{{ employee.salary | currency }}</td>
           <td>
-            <mat-icon class="text-info">mode_edit</mat-icon>
+            <mat-icon class="text-info" [routerLink]="['/edit-employee/', employee.id ]">mode_edit</mat-icon>
             <mat-icon class="text-danger" (click)="deleteEmoloye(employee.id)">delete</mat-icon>
           </td>
         </tr>

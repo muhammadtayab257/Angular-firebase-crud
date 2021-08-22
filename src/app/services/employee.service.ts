@@ -21,4 +21,9 @@ export class EmployeeService {
   deleteEmployee(id: string): Promise<any> {
     return this.firestore.collection("Users").doc(id).delete();
   }
+
+  // Get Single Employee
+  getSingleEmployee(id: string): Observable<any> {
+    return this.firestore.collection("Users").doc(id).snapshotChanges();
+  }
 }

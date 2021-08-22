@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '' ,component: EmployeeListComponent},
   { path: 'employeeList', component: EmployeeListComponent },
   { path: 'create-employe', component: CreateEmployeeComponent },
+  { path: 'edit-employee/:id', component: CreateEmployeeComponent },
   { path: "**", component: EmployeeListComponent}
 
 
