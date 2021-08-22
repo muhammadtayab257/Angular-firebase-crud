@@ -1,0 +1,5 @@
+.table>:not(caption)>*>* {
+    padding: .7rem .5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 0px;
+}

@@ -1,11 +1,11 @@
 <div class="container">
   <div class="shadow-lg bg-white p-3 mt-5 pt-5">
-    <div class="header">
+    <div class="header pb-4">
       <span class="fs-2">All Users List</span>
       <button mat-raised-button color="primary" class="float-end" routerLink="create-employe">Add New User</button>
     </div>
     <hr>
-    <table class="table ">
+    <table class="table table-striped" *ngIf="employees.length > 0">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -16,14 +16,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>Tayyab</th>
-          <td>Siraj</td>
-          <td>1212sq12</td>
-          <td>786910</td>
+        <tr *ngFor="let employee of employees">
+          <th>{{ employee.name}}</th>
+          <td>{{ employee.lastname}}</td>
+          <td>{{ employee.document}}</td>
+          <td>{{ employee.salary | currency }}</td>
           <td>
-            <mat-icon aria-hidden="false" class="text-info">mode_edit</mat-icon>
-            <mat-icon aria-hidden="false" class="text-danger">delete</mat-icon>
+            <mat-icon class="text-info">mode_edit</mat-icon>
+            <mat-icon class="text-danger" (click)="deleteEmoloye(employee.id)">delete</mat-icon>
           </td>
         </tr>
       </tbody>

@@ -12,11 +12,13 @@ export class EmployeeService {
   addEmployee(employee: any): Promise<any> {
     return this.firestore.collection("Users").add(employee)
   }
-
-  // Get ALL Employee
-
-  getEmployees():Observable<any> {
-    return this.firestore.collection("Users").snapshotChanges();
+  // Get All Employee
+  getEmployees(): Observable<any> {
+    return this.firestore.collection("Users", ref => ref.orderBy("creationDate", "desc")).snapshotChanges();
   }
 
+  // Delete Employee
+  deleteEmployee(id: string): Promise<any> {
+    return this.firestore.collection("Users").doc(id).delete();
+  }
 }
