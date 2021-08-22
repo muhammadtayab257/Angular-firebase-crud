@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     EmployeeListComponent,
     CreateEmployeeComponent,
     NavbarComponent,
+    EditEmployeeComponent,
 
   ],
   imports: [

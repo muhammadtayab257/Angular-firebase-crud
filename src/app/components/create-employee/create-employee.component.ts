@@ -32,7 +32,6 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.editEmployee();
   }
 
   //
@@ -61,22 +60,9 @@ export class CreateEmployeeComponent implements OnInit {
 
   }
 
-  //
-  editEmployee() {
-    this.text = "Edit User"
-    if (this.id !== null) {
-      this.employeeservice.getSingleEmployee(this.id).subscribe(data => {
-        console.log();
-        this.createemployee.setValue({
-          name: data.payload.data()['name'],
-          lastname: data.payload.data()['lastname'],
-          document: data.payload.data()['document'],
-          salary: data.payload.data()['salary'],
-        })
-      })
 
-    }
 
-  }
+
+
 
 }
