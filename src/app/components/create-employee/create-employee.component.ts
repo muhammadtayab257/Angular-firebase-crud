@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
 import { ToastrService } from 'ngx-toastr';
+import {Router } from '@angular/router';
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
@@ -13,7 +14,8 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private employeeservice: EmployeeService,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private router: Router,) {
 
     this.createemployee = this.fb.group({
       name: ['', Validators.required],
@@ -42,7 +44,7 @@ export class CreateEmployeeComponent implements OnInit {
     }
 
     this.employeeservice.addEmployee(employee).then(() => {
-      console.log("User Registered Sucssfully");
+        this.router.navigate(['employeeList'])
       this.toastr.success('Success', 'User Successfully Added', {
         positionClass: 'toast-bottom-right'
       });
