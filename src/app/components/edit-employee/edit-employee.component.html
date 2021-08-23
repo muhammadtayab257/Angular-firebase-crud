@@ -1,1 +1,43 @@
-<p>edit-employee works!</p>
+<div class="container shadow-md  py-2" style="margin-top: 60px;">
+  <div class="row justify-content-center ">
+    <div class="col-md-8 bg-light ">
+      <h1 class="text-center my-4">Edit Employee</h1>
+      <form [formGroup]="editemployee" (ngSubmit)="UpdateData()">
+
+        <div class="row g-2 p-2 ">
+          <div class="col-md">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label> Name</mat-label>
+              <input type="text" matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+          </div>
+          <div class="col-md">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input type="text" matInput formControlName="lastname">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row g-2 p-2 ">
+          <div class="col-md">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Document</mat-label>
+              <input type="text" matInput formControlName="document">
+            </mat-form-field>
+          </div>
+          <div class="col-md ">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Salary</mat-label>
+              <input type="text" matInput formControlName="salary">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-group pb-3 text-center">
+          <button type="text" mat-raised-button color="primary" class="mx-4" routerLink="employeeList">Return Back</button>
+          <button type="submit" mat-raised-button color="primary">Add User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

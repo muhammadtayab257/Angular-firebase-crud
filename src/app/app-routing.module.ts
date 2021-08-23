@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
-import { EmployeeListComponent } from './components/employee-list/employee-list.component'
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component'
 const routes: Routes = [
-  { path: '' ,component: EmployeeListComponent},
+  { path: '', component: EmployeeListComponent },
   { path: 'employeeList', component: EmployeeListComponent },
   { path: 'create-employe', component: CreateEmployeeComponent },
-  { path: 'edit-employee/:id', component: CreateEmployeeComponent },
-  { path: "**", component: EmployeeListComponent}
+  { path: 'edit-employee/:id', component: EditEmployeeComponent },
+  { path: "**", component: EmployeeListComponent }
 
 
 ];
