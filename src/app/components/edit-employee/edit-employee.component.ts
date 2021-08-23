@@ -29,6 +29,13 @@ export class EditEmployeeComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+
+
+  ngOnInit(): void {
+    this.id != null ? this.getValues() : this.router.navigate(['/employeeList'])
+
+  }
+
   getValues() {
     this.submitted = true;
     this.employeeservice.getSingleEmployee(this.id).subscribe(data => {
@@ -43,16 +50,23 @@ export class EditEmployeeComponent implements OnInit {
     })
   }
 
-
-  ngOnInit(): void {
-
-    this.id!=null?this.getValues():this.router.navigate(['/employeeList'])
-
-  }
-
-
-
+  // FINALLY UPDATE DATA
   UpdateData() {
+
+
+    const editemployee: any = {
+      name: this.editemployee.value.name,
+      lastname: this.editemployee.value.lastname,
+      document: this.editemployee.value.document,
+      salary: this.editemployee.value.salary,
+      dateUpdate: new Date()
+    }
+
+    this.employeeservice.updateEmployee(this.id, editemployee).then(() => {
+      this.toastr.success("User Edited Successfully", "Success")
+    }).catch(() => {
+      this.toastr.error("Some Thing Webt Wrong", "Error")
+    })
 
   }
 

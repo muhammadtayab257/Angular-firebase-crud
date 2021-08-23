@@ -29,7 +29,7 @@ export class EmployeeService {
 
 
   // Update Employee
-  updateEmployee(id: string, data: any) {
+  updateEmployee(id: any, data: any) {
     return this.firestore.collection("Users").doc(id).update(data)
 
   }
