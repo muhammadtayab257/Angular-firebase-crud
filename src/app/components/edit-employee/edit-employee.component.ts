@@ -27,20 +27,34 @@ export class EditEmployeeComponent implements OnInit {
       salary: ['', Validators.required],
     });
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
   }
+
+  getValues() {
+    this.submitted = true;
+    this.employeeservice.getSingleEmployee(this.id).subscribe(data => {
+      this.editemployee.setValue({
+        name: data.payload.data().name,
+        lastname: data.payload.data().lastname,
+        document: data.payload.data().document,
+        salary: data.payload.data().salary,
+
+      })
+
+    })
+  }
+
 
   ngOnInit(): void {
+
+    this.id!=null?this.getValues():this.router.navigate(['/employeeList'])
+
   }
 
+
+
   UpdateData() {
-    this.submitted = true;
-    const editSimgleEmployee: any = {
-      name: this.editemployee.value.name,
-      lastname: this.editemployee.value.lastname,
-      document: this.editemployee.value.document,
-      salary: this.editemployee.value.salary,
-      creationDate: new Date(),
-    }
+
   }
+
+
 }

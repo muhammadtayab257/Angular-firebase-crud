@@ -16,6 +16,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { PageNOtFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     CreateEmployeeComponent,
     NavbarComponent,
     EditEmployeeComponent,
+    PageNOtFoundComponent,
 
   ],
   imports: [

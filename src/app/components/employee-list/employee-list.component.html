@@ -20,7 +20,7 @@
           <th>{{ employee.name}}</th>
           <td>{{ employee.lastname}}</td>
           <td>{{ employee.document}}</td>
-          <td>{{ employee.salary | currency }}</td>
+          <td>{{ employee.salary}}</td>
           <td>
             <mat-icon class="text-info" [routerLink]="['/edit-employee/', employee.id ]">mode_edit</mat-icon>
             <mat-icon class="text-danger" (click)="deleteEmoloye(employee.id)">delete</mat-icon>

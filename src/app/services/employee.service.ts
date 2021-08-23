@@ -23,9 +23,10 @@ export class EmployeeService {
   }
 
   // Get Single Employee
-  getSingleEmployee(id: string): Observable<any> {
+  getSingleEmployee(id: any): Observable<any> {
     return this.firestore.collection("Users").doc(id).snapshotChanges();
   }
+
 
   // Update Employee
   updateEmployee(id: string, data: any) {
