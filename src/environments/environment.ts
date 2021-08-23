@@ -11,6 +11,7 @@ export const environment = {
     storageBucket: "angular-crud-51a88.appspot.com",
     messagingSenderId: "729648455929",
     appId: "1:729648455929:web:bebdbd17886ca497ae8228"
+    // 30e5a3c7e60f4a248b282962546f9247
   }
 };
 
