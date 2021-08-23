@@ -29,13 +29,7 @@ export class EditEmployeeComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
-
-
-  ngOnInit(): void {
-    this.id != null ? this.getValues() : this.router.navigate(['/employeeList'])
-
-  }
-
+  // GET VALUES OF USER
   getValues() {
     this.submitted = true;
     this.employeeservice.getSingleEmployee(this.id).subscribe(data => {
@@ -44,16 +38,12 @@ export class EditEmployeeComponent implements OnInit {
         lastname: data.payload.data().lastname,
         document: data.payload.data().document,
         salary: data.payload.data().salary,
-
       })
-
     })
   }
 
   // FINALLY UPDATE DATA
   UpdateData() {
-
-
     const editemployee: any = {
       name: this.editemployee.value.name,
       lastname: this.editemployee.value.lastname,
@@ -69,6 +59,12 @@ export class EditEmployeeComponent implements OnInit {
     })
 
   }
+
+
+  ngOnInit(): void {
+    this.id != null ? this.getValues() : this.router.navigate(['/employeeList'])
+  }
+
 
 
 }

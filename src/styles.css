@@ -11,3 +11,6 @@ body {
   background: url("./assets/bg.jpg") no-repeat;
   background-size: cover;
 }
+mat-icon {
+  cursor: pointer;
+}
