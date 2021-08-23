@@ -12,6 +12,7 @@ import { EmployeeService } from '../../services/employee.service';
 export class EditEmployeeComponent implements OnInit {
   editemployee!: FormGroup;
   submitted: boolean = false;
+  id!: string | null;
   constructor(
     private fb: FormBuilder,
     private employeeservice: EmployeeService,
@@ -24,13 +25,22 @@ export class EditEmployeeComponent implements OnInit {
       lastname: ['', Validators.required],
       document: ['', Validators.required],
       salary: ['', Validators.required],
-    })
+    });
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.id)
   }
 
   ngOnInit(): void {
   }
 
   UpdateData() {
-
+    this.submitted = true;
+    const editSimgleEmployee: any = {
+      name: this.editemployee.value.name,
+      lastname: this.editemployee.value.lastname,
+      document: this.editemployee.value.document,
+      salary: this.editemployee.value.salary,
+      creationDate: new Date(),
+    }
   }
 }
